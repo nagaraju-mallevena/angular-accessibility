@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 @use '@angular/material' as mat;
+@use '@angular/cdk';
 
 // TODO: #12. Enable HighContrast mode
 
@@ -89,7 +90,10 @@
     border-radius: 5px;
     background-color: mat.get-color-from-palette(mat.$pink-palette, A100);
 
-    // TODO: #12. Enable HighContrast mode
+    @include cdk-high-contrast {
+      outline: solid 1px;
+      background-color: mat.get-color-from-palette(mat.$pink-palette, 50);
+    }
 
     text-align: center;
     text-transform: uppercase;
@@ -98,6 +102,7 @@
     h3 {
       margin: 16px 0 16px;
     }
+    
   }
 }
 
@@ -109,6 +114,9 @@
   .purchase-button {
     background-color: mat.get-color-from-palette(mat.$light-green-palette, A100);
 
-    // TODO: #12. Enable HighContrast mode
+    @include cdk-high-contrast {
+      outline: solid 1px;
+      background-color: mat.get-color-from-palette(mat.$light-green-palette, 50);
+    }
   }
 }
